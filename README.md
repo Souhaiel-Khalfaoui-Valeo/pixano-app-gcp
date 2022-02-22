@@ -32,8 +32,8 @@ For Cloud Deployment :
 ```bash
 git clone https://github.com/camilledupont/pixano-app.git
 git checkout gcp
-Add app.yaml to folder
-Add firebaseServiceAccount.json to server/config/
+# Add app.yaml to folder
+# Add firebaseServiceAccount.json to server/config/
 npm i
 cd frontend
 npm i
