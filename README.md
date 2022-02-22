@@ -48,7 +48,7 @@ For Local Use :
 ```bash
 git clone https://github.com/camilledupont/pixano-app.git
 git checkout gcp
-//Uncomment line at function checkWhoGoogle in the middleware.js file
+# Uncomment line at function checkWhoGoogle in the middleware.js file
 npm i
 cd frontend
 npm i
