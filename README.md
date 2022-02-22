@@ -27,7 +27,7 @@ const auth = middleware.checkWhoGoogle;
 # remove the snapshot button in frontend/src/views/app-project-manager.js
 <mwc-button @click="${() => snapshotProject()}">Snapshot</mwc-button>
 ```
-For Cloud Deployment Use :
+For Cloud Deployment :
 
 ```bash
 git clone https://github.com/camilledupont/pixano-app.git
