@@ -41,6 +41,8 @@ npm run build
 gcloud app deploy
 ``` 
 
+Need to add each use by hand in the dashboard-user tab
+
 *If deployment problem, try first to clear chache and reload the tab.
 
 For Local Use :

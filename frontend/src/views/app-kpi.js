@@ -239,18 +239,20 @@ class AppKPI extends TemplatePage {
     */
     timeLabelToTotalTime(label, milliseconds) {
       var totalTime = this.items.map(x => +x[label]).reduce((a, b) => a + b, 0)
-      if (!milliseconds) {
+      // SECONDS FROMAT
+      /* if (milliseconds) {
         totalTime = totalTime*0.001  // multiply by 1000 if var in s => Date() requires ms
       }
-      /* if (milliseconds) {
-        totalTime = totalTime  // multiply by 1000 if var in s => Date() requires ms
+      return totalTime */
+      // DATE FROMAT
+      if (!milliseconds) {
+        totalTime = totalTime*1000  // multiply by 1000 if var in s => Date() requires ms
       }
-      
       var dateTime = new Date(totalTime);
       dateTime.setHours(dateTime.getHours() - 1);
       var dateTimeStr = dateTime.toTimeString().split(' ')[0]
-      return dateTimeStr */
-      return totalTime
+      
+      return dateTimeStr
     }
   
     get headerContent() {
@@ -284,8 +286,8 @@ class AppKPI extends TemplatePage {
   
     get kpiSection() {
       const taskName = getState('application').taskName;
-      const taskTime = this.timeLabelToTotalTime("cumulated_time", true)
-      // const loadingTime = this.timeLabelToTotalTime("loading_time_cumulated", false)
+      const taskTime = this.timeLabelToTotalTime("cumulated_time", false)
+      // const loadingTime = this.timeLabelToTotalTime("loading_time_cumulated", true)
       // <br>Total Loading Time : ${loadingTime.toFixed(2)} seconds
       return html`
       <div id="kpi-panel" class="kpi-panel">
@@ -295,7 +297,7 @@ class AppKPI extends TemplatePage {
           <div id="content-kpi-panel" style="display: flex;">
               <p>
                 Number of Frame : ${this.globalCounter}
-                <br>Total Time to Complete Task : ${taskTime.toFixed(2)} seconds
+                <br>Total Time to Complete Task : ${taskTime} seconds
                 <br>Total Number of Annotations : ${this.itemsGlobal.length}
               </p>
           </div>
